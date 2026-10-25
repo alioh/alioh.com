@@ -1,0 +1,30 @@
+# Shown on the homepage (summary) and on /projects/ (about).
+# Add a project here and it appears in both places.
+#
+# logo:      path to an image, shown faded behind the card
+# mark_text: used instead of a logo when the project has no logo file yet
+# cta:       label of the link at the bottom of the card
+#
+# Keep descriptions in double quotes: a ": " inside an unquoted value breaks YAML.
+
+- name: دليلي
+  url: https://daleel.li
+  logo: /images/projects/daleel.png
+  cta: زيارة الموقع
+  summary: "دليلك لسوق الأسهم السعودي: آخر الأخبار، تقرير يومي، حاسبة الأرباح، وشرح للمؤشرات."
+  about: "أداة تقدم بيانات وأسعار ومؤشرات مالية للأسهم في السوق السعودي (تاسي) لتسهيل اتخاذ القرارات الاستثمارية. فيها آخر أخبار السوق، وتقرير يومي، وحاسبة للأرباح، وشرح مبسط للمؤشرات المالية."
+
+- name: توزيعات
+  url: https://tawzea.at
+  logo: /images/projects/tawzea.png
+  logo_invert_in_light: true   # white-on-transparent logo; flipped to dark in light theme
+  cta: زيارة الموقع
+  summary: "متابعة توزيعات الأرباح في السوق السعودي، مرتبة حسب الانتظام والعائد، مع التصفية حسب القطاع."
+  about: "أداة لتتبع الشركات المدرجة في السوق المالية السعودية (تاسي) ومقارنتها حسب العائد على التوزيعات وغيره من المؤشرات المالية، مع ترتيب حسب انتظام التوزيع وتصفية حسب القطاع."
+
+- name: SplitDeck
+  url: https://github.com/alioh/SplitDeck
+  logo: /images/projects/splitdeck.svg
+  cta: عرض على GitHub
+  summary: "مشغّل وسائط محلي يعرض حتى 8 شاشات على شاشة واحدة، بدون دردشة أو أشرطة جانبية، فقط الفيديو."
+  about: "مشغّل وسائط يعمل على جهازك ويعرض حتى 8 شاشات على شاشة واحدة، فقط الفيديو بدون دردشة أو أشرطة جانبية. يدعم YouTube وTikTok وTwitch وKick وX وFacebook، ومعظم المواقع التي يدعمها yt-dlp. فيه عدد من الخصائص للتحكم بعرض الفيديو وتوزيعة على الشاشات، تكبير مشغّل واحد مع بقاء البقية تعمل بصمت، وتصفح للبثوث المباشرة، كما يتذكر إعداداتك بين الجلسات. مفتوح المصدر على GitHub."

@@ -1,0 +1,19 @@
+{% comment %}
+  Renders every entry of _data/projects.yml as a card.
+  Params: detailed (true = use the longer "about" text), heading (h2/h3, default h3)
+{% endcomment %}
+{% assign tag = include.heading | default: "h3" %}
+<div class="posts card-list">
+  {% for p in site.data.projects %}
+    <a class="post" href="{{ p.url }}" target="_blank" rel="noopener noreferrer">
+      {% if p.logo %}
+        <img class="project-mark{% if p.logo_invert_in_light %} project-mark--invert-light{% endif %}" src="{{ p.logo | prepend: site.baseurl }}" alt="" aria-hidden="true" loading="lazy">
+      {% elsif p.mark_text %}
+        <span class="project-mark project-mark--text" aria-hidden="true">{{ p.mark_text }}</span>
+      {% endif %}
+      <{{ tag }}>{{ p.name }}</{{ tag }}>
+      <div class="entry">{% if include.detailed %}{{ p.about }}{% else %}{{ p.summary }}{% endif %}</div>
+      <span class="read-more">{{ p.cta }} ←</span>
+    </a>
+  {% endfor %}
+</div>

@@ -227,7 +227,7 @@ blockquote {
   color: $darkGray;
   cursor: pointer;
   font-weight: normal;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .site-description {
@@ -246,7 +246,7 @@ nav {
   display: flex;
   align-items: center;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-size: 18px;
+  font-size: 16px;
 
   @include mobile {
     float: none;
@@ -258,7 +258,7 @@ nav {
   }
 
   a {
-    margin-right: 20px;
+    margin-right: 14px;
     color: $darkGray;
     text-align: left;
     font-weight: normal;
@@ -567,10 +567,76 @@ footer {
     font-size: 15px;
   }
 
+  // Faded brand mark sitting behind the card's left edge. Purely decorative:
+  // it never takes clicks, and the text is kept clear of it on wide screens.
+  .project-mark {
+    position: absolute;
+    left: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    height: auto;
+    max-width: 120px;
+    max-height: 84px;
+    margin: 0;
+    object-fit: contain;
+    opacity: .14;
+    pointer-events: none;
+    transition: opacity .15s ease;
+
+    @include mobile {
+      top: 14px;
+      left: 14px;
+      width: 56px;
+      height: 56px;
+      transform: none;
+    }
+  }
+
+  // Light cards wash the marks out, so they get a stronger fade there.
+  :root[data-theme="light"] & .project-mark {
+    opacity: .32;
+  }
+
+  :root[data-theme="light"] &:hover .project-mark {
+    opacity: .5;
+  }
+
+  // White-on-transparent logos would vanish on the light theme's pale cards.
+  :root[data-theme="light"] & .project-mark--invert-light {
+    filter: invert(1);
+  }
+
+  .project-mark--text {
+    width: auto;
+    height: auto;
+    font-size: 34px;
+    font-weight: bold;
+    line-height: 1;
+    white-space: nowrap;
+    color: $blue;
+
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  .project-mark ~ .entry {
+    margin-left: 120px;
+
+    @include mobile {
+      margin-left: 0;
+    }
+  }
+
   &:hover {
     border-color: $blue;
     box-shadow: 0 4px 14px var(--shadow);
     transform: translateY(-2px);
+
+    .project-mark {
+      opacity: .28;
+    }
   }
 }
 
