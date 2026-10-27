@@ -346,17 +346,29 @@ footer {
   a {
     display: inline-flex;
     align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    margin: 0 4px;
-    border-radius: 50%;
+    gap: 6px;
+    margin: 0 10px;
+    padding: 4px 0;
     color: $gray;
 
     &:hover, &:active {
       color: var(--accent);
-      background: var(--bg);
     }
+  }
+
+  .footer-links {
+    margin-bottom: 6px;
+    font-size: 16px;
+  }
+
+  .footer-social {
+    font-size: 14px;
+  }
+
+  .footer-copy {
+    margin: 10px 0 0;
+    font-size: 13px;
+    color: $gray;
   }
 }
 

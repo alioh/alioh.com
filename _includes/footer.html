@@ -1,7 +1,18 @@
 <div class="wrapper-footer">
   <div class="container">
     <footer class="footer">
-      {% include svg-icons.html %}
+      <nav class="footer-links" aria-label="روابط الموقع">
+        <a href="{{ site.baseurl }}/about/">من أنا</a>
+        <a href="{{ site.baseurl }}/contact/">تواصل</a>
+      </nav>
+      <nav class="footer-social" aria-label="حسابات التواصل الاجتماعي">
+        {% if site.footer-links.github %}<a href="https://github.com/{{ site.footer-links.github }}" rel="me">{% include icon.html name="github" %}<span>جيت هَب</span></a>{% endif %}
+        {% if site.footer-links.twitter %}<a href="https://x.com/{{ site.footer-links.twitter }}" rel="me">{% include icon.html name="x-twitter" %}<span>أكس / تويتر</span></a>{% endif %}
+        {% if site.footer-links.linkedin %}<a href="https://www.linkedin.com/in/{{ site.footer-links.linkedin }}" rel="me">{% include icon.html name="linkedin" %}<span>لينكد إن</span></a>{% endif %}
+        {% if site.footer-links.telegram %}<a href="https://telegram.me/{{ site.footer-links.telegram }}" rel="me">{% include icon.html name="telegram" %}<span>تيليجرام</span></a>{% endif %}
+        {% if site.footer-links.rss %}<a href="{{ site.baseurl }}/feed.xml">{% include icon.html name="rss" %}<span>RSS</span></a>{% endif %}
+      </nav>
+      <p class="footer-copy">© {{ 'now' | date: '%Y' }} {{ site.name }}</p>
     </footer>
   </div>
 </div>
